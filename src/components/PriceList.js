@@ -10,7 +10,7 @@ const PriceList = ({ items, onModifyItem, onDeleteItem }) => {
           key={item.id}
           className="list-group-item d-flex justify-content-between align-items-center"
         >
-          <span className="col-1 badge badge-primary">
+          <span className="col-1">
             <Ionicon
               className="rounded-circle"
               fontSize="30px"

@@ -20,6 +20,7 @@
   - 仅通过 props 接收数据和回调函数
   - 除非需要用到 state，生命周期函数或性能优化，同常写成函数式组件
 - 容器型组件
+
   - 关心数据的运作方式
   - 为展示型组件提供数据和操作数据的方法
   - 为展示型组件提供回调函数
@@ -59,3 +60,80 @@
 - React 内置了 PropTypes 来完成这个任务
 - Props 默认的值：defaultProps
 
+### 复杂的静态组件-月份选择
+
+## State 设计原则
+
+- 最小化 State 原则
+- DRY
+- 有些数据可以根据 state 计算得出
+
+### 首页 state 分析
+
+## 组件测试
+
+### 国内互联网测试现状
+
+- 重视程度严重不足
+- 没有时间
+- 不会写测试
+
+### 测试是什么和重要性
+
+- 高质量的代码
+- 更早的发现 Bug，减少成本
+- 让重构和升级更加容易和可靠
+- 让开发流程更加敏捷
+
+### 测试金字塔
+
+- UI e2e
+- Service 几个 Unit 组合
+- Unit 单元测试
+
+![测试金字塔](images/测试金字塔.png)
+
+### 现在很多公司现状
+
+![测试金字塔wrong](images/测试金字塔wrong.png)
+
+### React 特别适合单元测试
+
+- 组件化
+- Function Component
+- 单向数据流
+
+### 通用测试框架 Jest
+
+- 通用测试框架
+- 支持多平台，运行速度极快
+- 内置代码覆盖率
+- 为 React 提供了一些特殊的测试方法
+
+### 断言库
+
+- 判断一个值是否对应相应的结果
+- <https://jestjs.io/docs/en/using-matchers>
+- 其他断言库：chai 等等
+
+### React 测试工具
+
+- React 官方测试工具 - ReactTestUtils
+- Airbnb 基于官方的封装 - Enzyme
+
+### Enzyme 优点
+
+- 简单 易懂
+- 类似 jQuery 链式写法
+
+#### 两种测试方法
+
+- shallow Rendering：React 组件返回的是一系列 Virtual DOM 对象，这个方法是生成 vm 实例，然后测试它的属性，它不会渲染组件中的子组件
+- DOM Rendering：渲染的是一个真实的 DOM 环境，速度较慢
+
+yarn add -D enzyme enzyme-adapter-react-16
+
+### Snapshot testing
+
+- Jest 为 React 测试提供的特性
+- 为价格列表添加 snapshot
