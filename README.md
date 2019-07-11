@@ -137,3 +137,64 @@ yarn add -D enzyme enzyme-adapter-react-16
 
 - Jest 为 React 测试提供的特性
 - 为价格列表添加 snapshot
+
+## 首页单元测试用例分析
+
+- 测试默认状态 - 是否正确渲染特定组件和数据
+- 测试交互 - 点击交互该组件的 state 是否有相应的修改
+- 测试交互 - 对应操作触发以后展示型组件的属性是否修改
+
+## 使用 React-Router 开发 SPA 应用
+
+## TDD 的开发流程
+
+## Flatten State
+
+- 解决数据冗余
+- 处理数据高效方便
+
+## 简单谈谈 Redux
+
+- Redux is a predictable state container for JavaScript apps
+- 一种特殊的数据结构
+- 使用一些特殊的方法来实现数据的更改
+- 不是 React 特有的
+
+### 为什么不使用 Redux
+
+- 学习成本
+- 增加数据流复杂度
+- 需要增加太多的模板（Boilerplate）代码
+
+## 前后端分离开发和 mock server
+
+前端有一个自己的开发服务器，不需要在依赖后端服务器来支持项目的运行，摆脱对后端接口的依赖。
+
+前端开发注重于页面逻辑的实现，接口的参数、返回方法等双方都可以使用 Restful 的接口类，接口规范。
+
+### 前后端分离开发的优点
+
+- 为优质产品打造精益团队，培养双方独特的技术特性
+- 提升开发效率，前后端代码解耦，只要前后端沟通约定，应用所需的接口与参数，然后就可以并行开发。
+- 完美应变复杂多变的前端需求：开发独立化，开发人员做到专注专精，开发能力完美提升。
+- 增强代码的可维护性
+
+### 优秀的 mock server 应该有的特性
+
+- 快速搭建
+- 支持标准的 Restful 操作
+- 支持标准的 Restful 路由规则：<https://restfulapi.net/resource-naming/>
+- 一些进阶扩展，比如说自定义路由、中间件支持 等等
+
+### 使用 json-server 打造 mock server
+
+<https://github.com/typicode/json-server>
+
+### 分析应用的接口
+
+- `/items - GET，POST`
+- `/items/{id} - GET，PUT，DELETE`
+- `/items?monthCategory=2018-8&_sort=timestamp - GET`
+- `/categories - GET，POST`
+- `/categories/{id} - GET，PUT，DELETE`
+
