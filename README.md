@@ -198,3 +198,66 @@ yarn add -D enzyme enzyme-adapter-react-16
 - `/categories - GET，POST`
 - `/categories/{id} - GET，PUT，DELETE`
 
+### 使用 postman 测试 API 接口
+
+<https://www.getpostman.com/>
+
+- 支持各种操作系统
+- 有非常简洁易用的界面
+- 可以支持 API 测试的导出，很容易分享给其他开发
+
+PUT 与 PATCH 的区别
+
+## 下一代的 HTTP 库：Axios
+
+### Fetch 的缺点
+
+- 只对网络请求报错，对 400，500 都当作成功的请求
+- 默认不带 cookie
+- 不支持 abort，不支持超时控制，不能阻止请求过程，继续在后代运行，造成流量的浪费
+- 没有办法原生监测请求的进度
+
+### Axios
+
+<http://github.com/axios/axios>
+
+- 浏览器和 node 环境都可以使用
+- 完全支持标准的 Promise API
+- 简单易用的 API
+- 取消请求，JSON 数据自动转换 等等功能
+
+## 添加图表分析
+
+### 怎么选择一个好的开源库
+
+- 从它的主页和 Github 项目了解信息
+- 使用 npm-stat 分析下载量
+- 使用 npm view 查看发布频率
+
+### 学习 Recharts 的基本使用
+
+## 生产环境和开发环境的异同
+
+### 开发环境
+
+- 有尽量丰富的信息帮助程序员定位问题
+- 使用本地的 mock 数据
+
+### 生产环境
+
+- 尽量消除程序错误和调试信息
+- 使用线上真实数据
+- 访问速度是第一要务
+
+### 不同应用对于两种环境的适配
+
+- express 对于两种不同环境的优化
+- React 对于两种不同环境的优化
+
+## 服务器的不同类型
+
+### shared host 和 VPS
+
+### Cloud Hosts
+
+云主机，the future of web hosting，把大量的 server 组合在一起，形成一个聚合的网络，也可以叫做集群，分配给你的资源可以从资源池中动态的抽取，当你不使用资源时会自动的回收，有很棒的扩展性，你需要的资源可以根据你的需求自动的扩容，环境不需要自己安装。PSS、saas。

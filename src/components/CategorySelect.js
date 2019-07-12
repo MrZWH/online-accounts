@@ -1,43 +1,48 @@
 import React from 'react'
 import Ionicon from 'react-ionicons'
 import PropTypes from 'prop-types'
+import { Colors } from '../utility'
 
 class CategorySelect extends React.Component {
-  state = {
-    selectedCategoryId:
-      this.props.selectedCategory && this.props.selectedCategory.id
-  }
   selectCategory = (event, category) => {
-    this.setState({ selectedCategoryId: category.id })
     this.props.onSelectCategory(category)
-    event.preventDefult()
+    event.preventDefault()
   }
-
   render() {
-    const { categories } = this.props
-    const { selectedCategoryId } = this.state
+    const { categories, selectedCategory } = this.props
+    const selectedCategoryId = selectedCategory && selectedCategory.id
     return (
       <div className="category-select-component">
         <div className="row">
           {categories.map((category, index) => {
+            const iconColor =
+              category.id === selectedCategoryId ? Colors.white : Colors.gray
+            const backColor =
+              category.id === selectedCategoryId
+                ? Colors.blue
+                : Colors.lightGray
             const activeClassName =
               selectedCategoryId === category.id
-                ? 'category-item col-3 actice'
+                ? 'category-item col-3 active'
                 : 'category-item col-3'
             return (
               <div
-                onClick={evevt => {
-                  this.selectCategory(evevt, category)
-                }}
                 className={activeClassName}
                 key={index}
+                role="button"
+                style={{ textAlign: 'center' }}
+                onClick={event => {
+                  this.selectCategory(event, category)
+                }}
               >
                 <Ionicon
                   className="rounded-circle"
+                  style={{ backgroundColor: backColor, padding: '5px' }}
                   fontSize="50px"
-                  color="#555"
+                  color={iconColor}
                   icon={category.iconName}
                 />
+                <p>{category.name}</p>
               </div>
             )
           })}
@@ -47,4 +52,9 @@ class CategorySelect extends React.Component {
   }
 }
 
+CategorySelect.propTypes = {
+  categories: PropTypes.array.isRequired,
+  selectedCategory: PropTypes.object,
+  onSelectCategory: PropTypes.func.isRequired
+}
 export default CategorySelect
