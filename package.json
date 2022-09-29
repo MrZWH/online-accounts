@@ -13,7 +13,7 @@
     "react-ionicons": "^2.1.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "recharts": "^1.6.2",
+    "recharts": "^2.1.14",
     "json-server": "^0.15.0"
   },
   "scripts": {
